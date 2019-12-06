@@ -19,7 +19,6 @@ class MainApplication : Application(), ReactApplication {
         override fun getPackages(): List<ReactPackage> {
 // Packages that cannot be autolinked yet can be added manually here, for example:
             val packages = PackageList(this).packages
-//            packages.add(ToastPackage())
             return packages
         }
 
