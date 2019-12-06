@@ -3,6 +3,7 @@ import { DefaultNavigationProps, User } from '../../types';
 import Button from '../shared/Button';
 import { IC_MASK } from '../../utils/Icons';
 import React from 'react';
+import ToastModule from 'dooboo-library-my-module';
 import { View } from 'react-native';
 import { getString } from '../../../STRINGS';
 import styled from 'styled-components/native';
@@ -54,17 +55,18 @@ function Intro(props: Props): React.ReactElement {
   const [isLoggingIn, setIsLoggingIn] = React.useState<boolean>(false);
 
   const onLogin = (): void => {
-    setIsLoggingIn(true);
-    timer = setTimeout(() => {
-      const user: User = {
-        displayName: 'dooboolab',
-        age: 30,
-        job: 'developer',
-      };
-      setUser(user);
-      setIsLoggingIn(false);
-      clearTimeout(timer);
-    }, 1000);
+    ToastModule.show('hello');
+    // setIsLoggingIn(true);
+    // timer = setTimeout(() => {
+    //   const user: User = {
+    //     displayName: 'dooboolab',
+    //     age: 30,
+    //     job: 'developer',
+    //   };
+    //   setUser(user);
+    //   setIsLoggingIn(false);
+    //   clearTimeout(timer);
+    // }, 1000);
   };
 
   return (
