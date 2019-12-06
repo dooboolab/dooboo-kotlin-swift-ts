@@ -54,6 +54,7 @@
 		2D02E47B1E0B4A5D006451C7 /* dooboo-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dooboo-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* dooboo-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "dooboo-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		39377FA03B659F1727A008B1 /* Pods-dooboo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dooboo.release.xcconfig"; path = "Target Support Files/Pods-dooboo/Pods-dooboo.release.xcconfig"; sourceTree = "<group>"; };
+		4550085D2399F06B00311426 /* dooboo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "dooboo-Bridging-Header.h"; sourceTree = "<group>"; };
 		4D64180AB2B9E227E61B812D /* libPods-doobooTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-doobooTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DFC6FF574C4E063E4928A26 /* Pods-doobooTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-doobooTests.debug.xcconfig"; path = "Target Support Files/Pods-doobooTests/Pods-doobooTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7C7855F90221292A1206A78B /* Pods-dooboo-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dooboo-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-dooboo-tvOSTests/Pods-dooboo-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -165,6 +166,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				A335228DEED182E6E702D25D /* Pods */,
+				4550085D2399F06B00311426 /* dooboo-Bridging-Header.h */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -194,7 +196,6 @@
 				5DFC6FF574C4E063E4928A26 /* Pods-doobooTests.debug.xcconfig */,
 				DA338CA15E46C734E0D7BFC8 /* Pods-doobooTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -292,6 +293,9 @@
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
+					13B07F861A680F5B00A75B9A = {
+						LastSwiftMigration = 1120;
+					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
@@ -308,6 +312,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -626,6 +631,7 @@
 			baseConfigurationReference = D0045A800E40BFD2EC4E95AF /* Pods-dooboo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				INFOPLIST_FILE = dooboo/Info.plist;
@@ -635,8 +641,11 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dooboolab.dooboo;
 				PRODUCT_NAME = dooboo;
+				SWIFT_OBJC_BRIDGING_HEADER = "dooboo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -646,6 +655,7 @@
 			baseConfigurationReference = 39377FA03B659F1727A008B1 /* Pods-dooboo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = dooboo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -654,8 +664,10 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dooboolab.dooboo;
 				PRODUCT_NAME = dooboo;
+				SWIFT_OBJC_BRIDGING_HEADER = "dooboo-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
